@@ -46,8 +46,6 @@ container.append(row)
 document.body.append(container)
 
 
-
-
 div.append(heading,image,para)
 document.body.append(div)
 
