@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fullscreen{
+            background-color: aquamarine;
+            height: 300px;
+            width: 300px;
+        }
+        /* p{
+            display: none;
+            position: fixed;
+            top: 0;
+        } */
+        #online{
+            background-color: rgb(123, 243, 18);
+        }
+        #offline{
+            background-color: rgba(43, 45, 42, 0.61);
+            color: white;
+        }
+        .hello::selection{
+            background-color: orange;
+            color: black;
+        }
+        .dark-mode{
+            background-color: black;
+            color: rgb(227, 234, 221);
+        }
+    </style>
+</head>
+<body class="dark-mode ">
+    <!-- 1 -->
+    <button onclick="opennewWindow()">open</button>
+    <script>
+        function opennewWindow(){
+            let url = "https://twitter.com/"
+            window.open(url,"_blank","height,width")
+        }
+    </script>
+    <!-- 2 -->
+    <!-- <div id="fullscreen">
+        <h1>hello js</h1>
+    </div>
+    <br>
+    <button onclick="fullscreen()">full screen</button>
+    <script>
+        
+            let fs = document.getElementById('fullscreen')
+            function fullscreen(){
+                fs.requestFullscreen()
+        }
+    </script> -->
+    <!-- 3 -->
+    <!-- <h1>Hello JS</h1>
+    <p id="offline">you are not connected to internet</p>
+    <p id="online">Back online!</p>
+    <script>
+        let noInternet = document.getElementById("offline")
+        let Internet = document.getElementById("online")
+        window.addEventListener('noInternet',function(){
+            online.style.display= "block"
+        })
+        window.addEventListener('Internet',function(){
+            offline.style.display= "block"
+        })
+    </script> -->
+    <!-- 4 -->
+    <!-- <h1 class="hello">Hello JS</h1> -->
+    <!-- 5 -->
+    <!-- <a href="https://wa.me/+919500592975?text=hi , i saw ur ad in instagram , shall we discuss ">WhatsApp</a> -->
+    <!-- 6 -->
+    <div>
+        <h1>Hello js</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Ducimus amet, nulla explicabo repellat perferendis voluptates
+    </p>
+    </div>
+    <button onclick="switchTheme()">Dark Mode</button>
+    <script>
+        function switchTheme(){
+            document.body.classList.toggle("dark-mode")
+        }
+    </script>
+</body>
+</html>

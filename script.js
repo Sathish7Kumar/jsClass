@@ -558,32 +558,32 @@
 //    // promise - pending , success , failure , 
 //    // .then() - success , .catch()- failure
 
-   const p1 = new Promise((res,rej)=>{
-         setTimeout(()=>{
-            res("success-1")
-            rej("failure-1")
-         },2000)  
-   })
+  //  const p1 = new Promise((res,rej)=>{
+  //        setTimeout(()=>{
+  //           res("success-1")
+  //           rej("failure-1")
+  //        },2000)  
+  //  })
 //    // p1
 //    // .then(console.log)
 //    // .catch(console.log)
 
-   const p2 = new Promise((res,rej)=>{
-      setTimeout(()=>{
-         res("success-2")
-         rej("failure-2")
+//    const p2 = new Promise((res,rej)=>{
+//       setTimeout(()=>{
+//          res("success-2")
+//          rej("failure-2")
          
-      },1000) 
-})
+//       },1000) 
+// })
 // // promise methods : 
 
 // // Promise.all([p1,p2])
 // // .then(console.log)
 // // .catch(console.log)
 
-Promise.allSettled([p1,p2])
-.then(console.log)
-.catch(console.log)
+// Promise.allSettled([p1,p2])
+// .then(console.log)
+// .catch(console.log)
 
 // Promise.race([p1,p2])
 // .then(console.log)
@@ -683,46 +683,199 @@ Promise.allSettled([p1,p2])
 // }
 // console.log(name("hello"))
 
-async function getResponse(){
-  try {
-   const resp =  await fetch("https://fakestoreapi.com/products")
-   const data = resp.json()
-   return data
-  } catch (error) {
-    console.log(error);
-  }
-}
-async function getData(){
-  try {
-    const data  = await getResponse()
-    getProducts(data)
-  } catch (error) {
-    console.log(error);
-  }
-}
-getData()
+// async function getResponse(){
+//   try {
+//    const resp =  await fetch("https://fakestoreapi.com/products")
+//    const data = resp.json()
+//    return data
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// async function getData(){
+//   try {
+//     const data  = await getResponse()
+//     getProducts(data)
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// getData()
 
-function getProducts(products){
-  const price = products.map(x=>x.price)
-  console.log(price);
-}
+// function getProducts(products){
+//   const price = products.map(x=>x.price)
+//   console.log(price);
+// }
 
 
-let mesg = new Promise((res,rej)=>{
-  rej("failure")
-  res("success")
+// let mesg = new Promise((res,rej)=>{
+//   rej("failure")
+//   res("success")
   
-})
+// })
 
-let DB = async ()=>{
-  try {
-    const data = await mesg
-    console.log(data);
-  } catch (error) {
-    console.log(error);
+// let DB = async ()=>{
+//   try {
+//     const data = await mesg
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// DB()
+
+// oops
+
+// let myname = "kesavan"
+// let myage = 22
+// let favColor = ["red","blue"]
+// let place = {
+//   city : "chennai"
+// }
+
+// let student = {   
+//   studname  : "kesavan", // string
+//   age : 22, // number
+//   favColor : ["red","blue"], // array
+//   isStudent : true, // boolean
+//   place : { // object
+//       city : "chennai",
+//     state : "tamilnadu"
+//     },
+//     details : function(){ // function
+//       console.log(this.studname);
+//     }
+// }
+// student.details()
+
+// // factory functions 
+
+// function createEmp(name){
+//   return{
+//     myname  : name,
+//     welcome : function(){
+//       let empdetail = `Hi , my name is ${this.myname} i am new Employee`
+//       console.log(empdetail);
+//     }
+//   }
+// }
+
+// let emp1 = createEmp("vishnu") // 1st call
+// emp1.welcome()
+
+// let emp2 = createEmp("kesavan")  // 2nd call
+// emp2.welcome()
+
+// let emp3 = createEmp("dhoni")
+// emp3.welcome()
+
+// // createEmp("abcd").welcome()
+// // createEmp("efgh").welcome()
+
+
+// // contructor function : 
+
+// function CreateStudent(name){
+//    this.studName = name,
+//     this.welcomeMesg = function (){
+//       console.log(`student name is ${this.studName}`);
+//   }
+// }
+// // new CreateStudent("vishnu").welcomeMesg()
+// // new CreateStudent("kesavan").welcomeMesg()
+
+// let student1 = new CreateStudent("kesavan")
+// student1.welcomeMesg()
+
+
+// let student2 = new CreateStudent("vishnu reddy")
+// student2.welcomeMesg()
+
+// class 
+
+// let user1= {
+//   name : "vishnu",
+//   age : 21,
+//   login(){
+//     console.log('HI ' + this.name);
+//     console.log("you are logged in");
+//   },
+//   logout(){
+//     console.log("you are logged out");
+//   }
+// }
+// let user2= {
+//   name : "kesavan",
+//   age : 20,
+//   login(){
+//     console.log('HI ' + this.name);
+//     console.log("you are logged in");
+//   },
+//   logout(){
+//     console.log("you are logged out");
+//   }
+// }
+// let user3= {
+//   name : "msd",
+//   age : 42,
+//   login(){
+//     console.log('HI ' + this.name);
+//     console.log("you are logged in");
+//   },
+//   logout(){
+//     console.log("you are logged out");
+//   }
+// }
+
+// user3.login()
+// base class / parent class : 
+class User{ 
+  static totalUsers = 0
+  constructor(name,age){
+    this.myname =name
+    this.myage = age
+    User.totalUsers++
+  }
+  login(){
+    console.log('HI ' + this.myname);
+    console.log("you are logged in");
+  }
+  logout(){
+    console.log("hi "+this.myname+  " logged out");
+  }
+  static totalNofUser(){
+    console.log(User.totalUsers);
   }
 }
-DB()
+
+  
+let user1 = new User("kesavan",21) // free
+let user2 = new User("vishnu",20) // free
+// let user3 = new User("dhoni",42)  // premium = access for to play all movies
+
+// console.log(User.totalUsers);
+User.totalNofUser()
+
+// user1.logout()
+
+// derived or child class
+class PaidUsers extends User {
+  constructor(name,age,paidamount){
+    super(name,age,paidamount)
+    this.amount = paidamount
+  }
+  premiumMembership(){
+    console.log("you have access for to play all movies u paid "+this.amount + " per month");
+  }
+}
+
+let paidUser1 = new PaidUsers("dhoni",42,"rs.200")
+paidUser1.login()
+paidUser1.premiumMembership()
+
+
+
+
 
 
 // datatypes - primitive - Str,num, boole,undef,null
@@ -744,7 +897,6 @@ DB()
 // promise
 // xml http request
 // async / await
-
 // oops 
 
 
