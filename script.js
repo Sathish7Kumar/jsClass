@@ -1,5 +1,7 @@
 // javscripts - dataTypes
 
+
+
 // 2 dt - primitive , non primitive
 
 // primitive Dt ->
@@ -829,49 +831,60 @@
 
 // user3.login()
 // base class / parent class : 
-class User{ 
-  static totalUsers = 0
-  constructor(name,age){
-    this.myname =name
-    this.myage = age
-    User.totalUsers++
-  }
-  login(){
-    console.log('HI ' + this.myname);
-    console.log("you are logged in");
-  }
-  logout(){
-    console.log("hi "+this.myname+  " logged out");
-  }
-  static totalNofUser(){
-    console.log(User.totalUsers);
-  }
-}
+// class User{ 
+//   static totalUsers = 0
+//   constructor(name,age){
+//     this.myname =name
+//     this.myage = age
+//     User.totalUsers++
+//   }
+//   login(){
+//     console.log('HI ' + this.myname);
+//     console.log("you are logged in");
+//   }
+//   logout(){
+//     console.log("hi "+this.myname+  " logged out");
+//   }
+//   static totalNofUser(){
+//     console.log(User.totalUsers);
+//   }
+// }
 
   
-let user1 = new User("kesavan",21) // free
-let user2 = new User("vishnu",20) // free
-// let user3 = new User("dhoni",42)  // premium = access for to play all movies
+// let user1 = new User("kesavan",21) // free
+// let user2 = new User("vishnu",20) // free
+// // let user3 = new User("dhoni",42)  // premium = access for to play all movies
 
-// console.log(User.totalUsers);
-User.totalNofUser()
+// // console.log(User.totalUsers);
+// User.totalNofUser()
 
-// user1.logout()
+// // user1.logout()
 
-// derived or child class
-class PaidUsers extends User {
-  constructor(name,age,paidamount){
-    super(name,age,paidamount)
-    this.amount = paidamount
-  }
-  premiumMembership(){
-    console.log("you have access for to play all movies u paid "+this.amount + " per month");
-  }
-}
+// // derived or child class
+// class PaidUsers extends User {
+//   constructor(name,age,paidamount){
+//     super(name,age,paidamount)
+//     this.amount = paidamount
+//   }
+//   premiumMembership(){
+//     console.log("you have access for to play all movies u paid "+this.amount + " per month");
+//   }
+// }
 
-let paidUser1 = new PaidUsers("dhoni",42,"rs.200")
-paidUser1.login()
-paidUser1.premiumMembership()
+// let paidUser1 = new PaidUsers("dhoni",42,"rs.200")
+// paidUser1.login()
+// paidUser1.premiumMembership()
+
+import x, { airTransaport as air, electronicVehicle as ev } from "./Vehicle.js";
+
+let vehicleType = new x()
+vehicleType.car()
+air()
+ev()
+
+
+
+
 
 
 
